@@ -1,6 +1,6 @@
 import ipinfo from "ipinfo";
 import { BlackList } from "@/app/utils/black";
-export async function GET(request: any) {
+export async function GET(request: any): Promise<void | Response> {
   const ip =
     request.headers.get("x-forwarded-for") ||
     request.headers.get("remote-addr");
@@ -39,3 +39,4 @@ export async function GET(request: any) {
     });
   });
 }
+export const runtime = "edge";

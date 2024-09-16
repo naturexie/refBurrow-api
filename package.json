@@ -7,14 +7,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "prettier --write src && next lint",
-    "prettier:fix": "prettier --write src"
+    "prettier:fix": "prettier --write src",
+    "preinstall": "npx only-allow pnpm",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
     "ipinfo": "^1.5.1",
     "next": "14.2.11",
+    "prettier": "2.3.1",
     "react": "^18",
-    "react-dom": "^18",
-    "prettier": "2.3.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -22,9 +26,12 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.11",
+    "husky": "^8.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
-    "husky": "^8.0.3"
+    "vercel": "^37.4.2",
+    "wrangler": "^3.78.2",
+    "@cloudflare/next-on-pages": "^1.13.2"
   }
 }
