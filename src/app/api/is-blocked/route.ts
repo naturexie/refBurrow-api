@@ -39,4 +39,3 @@ export async function GET(request: any): Promise<void | Response> {
     });
   });
 }
-export const runtime = "edge";
