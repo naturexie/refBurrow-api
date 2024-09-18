@@ -1,6 +1,6 @@
 import ipinfo from "ipinfo";
 import { BlackList } from "@/app/utils/black";
-export const runtime = "edge";
+// export const runtime = "edge";
 export async function GET(request: any): Promise<void | Response> {
   const ip =
     request.headers.get("x-forwarded-for") ||
@@ -17,7 +17,7 @@ export async function GET(request: any): Promise<void | Response> {
             status: 200,
             headers: {
               "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": '*'
+              "Access-Control-Allow-Origin": "*",
             },
           })
         );
@@ -35,7 +35,7 @@ export async function GET(request: any): Promise<void | Response> {
             status: 200,
             headers: {
               "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": '*'
+              "Access-Control-Allow-Origin": "*",
             },
           })
         );
